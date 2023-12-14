@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Openfort.SDK;
+﻿using Openfort.SDK;
 using Openfort.SDK.Model;
 using Unity.Services.CloudCode.Apis;
 using Unity.Services.CloudCode.Core;
