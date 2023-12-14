@@ -806,7 +806,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 262115555}
         m_TargetAssemblyTypeName: MintingController, Assembly-CSharp
-        m_MethodName: GetAccountNftInventory
+        m_MethodName: GetPlayerNftInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1124,7 +1124,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  clearSessionToken: 1
+  clearSessionToken: 0
 --- !u!1 &1804562633
 GameObject:
   m_ObjectHideFlags: 0

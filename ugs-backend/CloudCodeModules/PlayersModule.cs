@@ -23,6 +23,35 @@ public class PlayersModule: BaseModule
         _chainId = _singleton.ChainId;
     }
     
+    [CloudCodeFunction("SetOpenfortPlayerData")]
+    public async Task SetOpenfortPlayerData(IExecutionContext context, string ofPlayerId)
+    {
+        try
+        {
+            // Get Openfort player
+            var request = new PlayerGetRequest(ofPlayerId);
+            var player = await _ofClient.Players.Get(request);
+            
+            //Get Openfort account
+            var accRequest = new AccountListRequest(ofPlayerId, 1);
+            var accountList = await _ofClient.Accounts.List(accRequest);
+            
+            // Check if accountList 
+            if (accountList.Data.Count == 0)
+            {
+                throw new Exception("No Openfort account found for the player.");
+            }
+            
+            // Save it to the Singleton class
+            _singleton.CurrentOfPlayer = player;
+            _singleton.CurrentOfAccount = accountList.Data[0];
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
+    }
+    
     [CloudCodeFunction("CreateOpenfortPlayer")]
     public async Task<PlayerResponse?> CreateOpenfortPlayer(IExecutionContext context, IGameApiClient gameApiClient, string playerName)
     {
@@ -36,34 +65,35 @@ public class PlayersModule: BaseModule
         // Create account
         var accRequest = new CreateAccountRequest(_chainId, null!, null, null!, 0L, player.Id);
         var account = await _ofClient.Accounts.Create(accRequest);
-
+        
+        // Save Openfort Account to Singleton
         _singleton.CurrentOfAccount = account;
         
         // Now you can call SaveData with the context
-        await SaveData(context, gameApiClient, "OpenfortPlayerId", player.Id);
-        await SaveData(context, gameApiClient, "OpenfortAccountId", account.Id);
+        await SavePlayerData(context, gameApiClient, "OpenfortPlayerId", player.Id);
+        await SavePlayerData(context, gameApiClient, "OpenfortAccountId", account.Id);
+        
         return player;
     }
     
-    [CloudCodeFunction("GetAccountNftInventory")]
-    public async Task<InventoryListResponse?> GetAccountNftInventory()
+    [CloudCodeFunction("GetPlayerNftInventory")]
+    public async Task<InventoryListResponse?> GetPlayerNftInventory()
     {
         // Important to remember that this account persists in the Singleton until a new Openfort player is created.
-        var currentOfAccount = _singleton.CurrentOfAccount;
+        var currentOfPlayer = _singleton.CurrentOfPlayer;
 
-        if (currentOfAccount == null)
+        if (currentOfPlayer == null)
         {
-            Debug.WriteLine("Openfort account is null.");
-            return null;
+            throw new Exception("No Openfort player found.");
         }
         
-        var request = new AccountInventoryListRequest(currentOfAccount.Id);
-        var inventoryList = await _ofClient.Inventories.GetAccountNftInventory(request);
+        var request = new PlayerInventoryListRequest(currentOfPlayer.Id, _singleton.ChainId);
+        var inventoryList = await _ofClient.Inventories.GetPlayerNftInventory(request);
         
         return inventoryList;
     }
     
-    private async Task SaveData(IExecutionContext context, IGameApiClient gameApiClient, string key, object value)
+    private async Task SavePlayerData(IExecutionContext context, IGameApiClient gameApiClient, string key, object value)
     {
         try
         {

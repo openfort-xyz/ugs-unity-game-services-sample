@@ -18,7 +18,7 @@ public class MintingController : BaseController
         await SubscribeToPlayerMessages();
         
         await Task.Delay(1000);
-        GetAccountNftInventory();
+        GetPlayerNftInventory();
     }
 
     public async void MintNFT()
@@ -28,13 +28,13 @@ public class MintingController : BaseController
         // Let's wait for the message from backend --> Inside SubscribeToPlayerMessages()
     }
     
-    public async void GetAccountNftInventory()
+    public async void GetPlayerNftInventory()
     {
         statusText.text = "Getting NFT inventory...";
         
         try
         {
-            var inventoryList = await CloudCodeService.Instance.CallModuleEndpointAsync<InventoryListResponse>(CurrentCloudModule, "GetAccountNftInventory");
+            var inventoryList = await CloudCodeService.Instance.CallModuleEndpointAsync<InventoryListResponse>(CurrentCloudModule, "GetPlayerNftInventory");
 
             if (inventoryList.Data.Count == 0)
             {
@@ -81,7 +81,7 @@ public class MintingController : BaseController
             statusText.text = "Transaction successful. Please wait...";
             
             await Task.Delay(8000);
-            GetAccountNftInventory();
+            GetPlayerNftInventory();
         }
     }
     

@@ -70,6 +70,11 @@ public class AuthController : BaseController
           }
           else
           {
+              statusText.text = "Setting current Openfort player data...";
+              var functionParams = new Dictionary<string, object> { { "ofPlayerId", ofPlayerId } };
+              await CloudCodeService.Instance.CallModuleEndpointAsync(CurrentCloudModule, "SetOpenfortPlayerData",
+                  functionParams);
+              
               statusText.text = "Signed in successfully.";
               authSuccess?.Invoke(ofPlayerId);
           }

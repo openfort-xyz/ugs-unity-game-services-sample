@@ -31,8 +31,7 @@ public class MintingModule: BaseModule
 
         if (currentOfPlayer == null || currentOfAccount == null)
         {
-            Debug.WriteLine("Current Openfort player or account is null");
-            return;
+            throw new Exception("No Openfort account found for the player.");
         }
 
         Interaction interaction =
