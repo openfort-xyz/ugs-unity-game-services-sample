@@ -24,7 +24,7 @@ public class MintingController : BaseController
     public async void MintNFT()
     {
         statusText.text = "Minting NFT...";
-        await CloudCodeService.Instance.CallModuleEndpointAsync("OpenfortIntegration", "MintNFT");
+        await CloudCodeService.Instance.CallModuleEndpointAsync(CurrentCloudModule, "MintNFT");
         // Let's wait for the message from backend --> Inside SubscribeToPlayerMessages()
     }
     
@@ -34,7 +34,7 @@ public class MintingController : BaseController
         
         try
         {
-            var inventoryList = await CloudCodeService.Instance.CallModuleEndpointAsync<InventoryListResponse>("OpenfortIntegration", "GetAccountNftInventory");
+            var inventoryList = await CloudCodeService.Instance.CallModuleEndpointAsync<InventoryListResponse>(CurrentCloudModule, "GetAccountNftInventory");
 
             if (inventoryList.Data.Count == 0)
             {
@@ -66,14 +66,14 @@ public class MintingController : BaseController
         statusText.text = "Getting transaction intent...";
 
         var functionParams = new Dictionary<string, object> { { "txId", transactionIntentId } };
-        var txIntent = await CloudCodeService.Instance.CallModuleEndpointAsync<TransactionIntentResponse>("OpenfortIntegration", "GetTransactionIntent", functionParams);
+        var txIntent = await CloudCodeService.Instance.CallModuleEndpointAsync<TransactionIntentResponse>(CurrentCloudModule, "GetTransactionIntent", functionParams);
 
         while (txIntent.Response.Status == 0)
         {
             // Perhaps add a delay here for the API calls to not continuously hit an endpoint.
             await Task.Delay(1000);
 
-            txIntent = await CloudCodeService.Instance.CallModuleEndpointAsync<TransactionIntentResponse>("OpenfortIntegration", "GetTransactionIntent", functionParams);
+            txIntent = await CloudCodeService.Instance.CallModuleEndpointAsync<TransactionIntentResponse>(CurrentCloudModule, "GetTransactionIntent", functionParams);
         }
 
         if (txIntent.Response.Status == 1)
