@@ -75,11 +75,11 @@ In the [Openfort Players dashboard](https://dashboard.openfort.xyz/players), a n
 
 You'll notice that a `mint` transaction has been successfully processed:
 
-![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_3_ceeb1a3c2c.png?updated_at=2023-11-19T11:06:46.084Z)
+![Alt text](https://strapi-oube.onrender.com/uploads/ugs_integration_7_75cf7a4264.png?updated_at=2023-12-14T16:05:01.500Z)
 
-Additionally, by choosing your **Sepolia Account** and viewing ***NFT Transfers***, the transaction is further confirmed:
+Additionally, by choosing your **Mumbai Account** and viewing ***NFT Transfers***, the transaction is further confirmed:
 
-![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_4_97e49a99aa.png?updated_at=2023-11-19T11:06:47.187Z)
+![Alt text](https://strapi-oube.onrender.com/uploads/ugs_integration_8_6b345bd148.png?updated_at=2023-12-14T16:05:00.991Z)
 
 Keep in mind that the sample is designed so a player can mint only once. By default, UGS Authentication will use the same player per device. If you want to sign in with a new player check the ***Clear Session Token*** in ***AuthController***:
 
