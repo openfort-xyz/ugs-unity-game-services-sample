@@ -65,7 +65,7 @@ The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/a
 Follow the [official documentation steps](https://docs.unity.com/ugs/manual/authentication/manual/get-started#Link_your_project) to link the ``unity-client`` to your UGS Project ID.
 
 ## Test in Editor
-Play the **Login** scene, opt for ***Register***, provide an email and password, and then click **Register***** again. This scene should appear:
+Play the **Main** scene and click ***Sign in*** button. After some authentication-related logs, this panel should appear:
 
 ![Game Scene](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_32_35f675ded4.png?updated_at=2023-11-19T11:06:40.788Z)
 
@@ -84,6 +84,10 @@ You'll notice that a `mint` transaction has been successfully processed:
 Additionally, by choosing your **Sepolia Account** and viewing ***NFT Transfers***, the transaction is further confirmed:
 
 ![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_4_97e49a99aa.png?updated_at=2023-11-19T11:06:47.187Z)
+
+Have in mind that the sample is designed so a player can mint only once. By default UGS Authentication will use the same player per device. If you want to sign in with a new player check the ***Clear Session Token*** in ***AuthController***:
+
+![](https://strapi-oube.onrender.com/uploads/ugs_integration_2_b0fae3ec75.png?updated_at=2023-12-14T09:56:42.591Z)
 
 ## Conclusion
 
