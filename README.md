@@ -25,19 +25,19 @@ The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/a
 ## Setup Openfort dashboard
   + [Add a Contract](https://dashboard.openfort.xyz/assets/new)
     
-    This sample requires a contract to run. We use [0x51216BFCf37A1D2002A9F3290fe5037C744a6438](https://sepolia.etherscan.io/address/0x51216bfcf37a1d2002a9f3290fe5037c744a6438) (NFT contract deployed in 11155111 Sepolia). You can use this for the guide:
+    This sample requires a contract to run. We use [0x38090d1636069c0ff1Af6bc1737Fb996B7f63AC0](https://mumbai.polygonscan.com/address/0x38090d1636069c0ff1Af6bc1737Fb996B7f63AC0) (NFT contract deployed in 80001 Mumbai). You can use this for the guide:
 
-    ![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_2eae75d470.png?updated_at=2023-11-19T11:06:46.685Z)
+    ![Alt text](https://strapi-oube.onrender.com/uploads/ugs_integration_4_9397f3633b.png?updated_at=2023-12-14T15:59:33.808Z)
 
   + [Add a Policy](https://dashboard.openfort.xyz/policies/new)
     
     We aim to cover gas fees for users. Set a new gas policy:
 
-    ![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_1_ecaa326bfe.png?updated_at=2023-11-19T11:06:46.377Z)
+    ![Alt text](https://strapi-oube.onrender.com/uploads/ugs_integration_5_ab3d8ad48d.png?updated_at=2023-12-14T15:59:33.985Z)
 
     Now, add a rule so our contract uses this policy:
 
-    ![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_2_493f681e5a.png?updated_at=2023-11-19T11:06:42.679Z)
+    ![Alt text](https://strapi-oube.onrender.com/uploads/ugs_integration_6_6727e69146.png?updated_at=2023-12-14T15:59:33.683Z)
 
 ## Set up [`ugs-backend`](https://github.com/openfort-xyz/ugs-unity-game-services-sample/tree/main/ugs-backend)
 
