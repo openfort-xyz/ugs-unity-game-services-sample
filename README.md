@@ -85,7 +85,7 @@ Additionally, by choosing your **Sepolia Account** and viewing ***NFT Transfers*
 
 ![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_img_4_97e49a99aa.png?updated_at=2023-11-19T11:06:47.187Z)
 
-Have in mind that the sample is designed so a player can mint only once. By default UGS Authentication will use the same player per device. If you want to sign in with a new player check the ***Clear Session Token*** in ***AuthController***:
+Keep in mind that the sample is designed so a player can mint only once. By default, UGS Authentication will use the same player per device. If you want to sign in with a new player check the ***Clear Session Token*** in ***AuthController***:
 
 ![](https://strapi-oube.onrender.com/uploads/ugs_integration_2_b0fae3ec75.png?updated_at=2023-12-14T09:56:42.591Z)
 
