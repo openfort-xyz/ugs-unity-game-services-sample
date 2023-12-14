@@ -6,7 +6,7 @@ using Openfort.SDK.Client;
 using Openfort.SDK.Model;
 using Unity.Services.CloudSave.Model;
 
-namespace OpenfortIntegration;
+namespace CloudCodeModules;
 
 public class PlayersModule: BaseModule
 {

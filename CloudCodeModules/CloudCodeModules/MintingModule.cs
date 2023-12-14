@@ -4,7 +4,7 @@ using Openfort.SDK.Model;
 using Unity.Services.CloudCode.Apis;
 using Unity.Services.CloudCode.Core;
 
-namespace OpenfortIntegration;
+namespace CloudCodeModules;
 
 public class MintingModule: BaseModule
 {

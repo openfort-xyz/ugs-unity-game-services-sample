@@ -1,7 +1,7 @@
 ﻿using Openfort.SDK;
 using Openfort.SDK.Model;
 
-namespace OpenfortIntegration;
+namespace CloudCodeModules;
 
 public class SingletonModule
 {

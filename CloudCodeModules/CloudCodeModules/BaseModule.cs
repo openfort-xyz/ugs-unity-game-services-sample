@@ -2,7 +2,7 @@
 using Unity.Services.CloudCode.Apis;
 using Unity.Services.CloudCode.Core;
 
-namespace OpenfortIntegration;
+namespace CloudCodeModules;
 
 public abstract class BaseModule
 {

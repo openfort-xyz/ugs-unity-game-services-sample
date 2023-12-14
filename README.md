@@ -6,13 +6,13 @@ This is a sample project to showcase the Openfort integration with [Unity Gaming
 The sample includes:
   - [**`OpenfortIntegration`**](https://github.com/dpradell-dev/openfort-ugs-integration/tree/main/OpenfortIntegration)
     
-    A .NET Core project with [Cloud Code C# modules](https://docs.unity.com/ugs/en-us/manual/cloud-code/manual/modules#Cloud_Code_C#_modules) that implement [Openfort C# SDK](https://github.com/openfort-xyz/openfort-csharp-unity) methods. Hosted in UGS.
+    A .NET Core project with [Cloud Code C# modules](https://docs.unity.com/ugs/en-us/manual/cloud-code/manual/modules#Cloud_Code_C#_modules) that implement [Openfort C# SDK](https://www.nuget.org/packages/Openfort.SDK/1.0.21) methods. Hosted in UGS.
 
   - [**`unity-client`**](https://github.com/dpradell-dev/openfort-ugs-integration/tree/main/unity-client)
 
     A Unity sample game that connects to ``OpenfortIntegration`` through [Cloud Code](https://docs.unity.com/ugs/manual/cloud-code/manual). It uses [Openfort Unity SDK](https://github.com/openfort-xyz/openfort-csharp-unity) to deserialize its responses.  
 
-The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/authentication/manual/get-started) to sign in as a new anonymous player. It then [creates an Openfort player](https://github.com/dpradell-dev/openfort-ugs-integration/blob/19b4057edeefff2e08ca029bd9c57b7c94cc0510/OpenfortIntegration/OpenfortIntegration/PlayersModule.cs#L31) and a [custodial account](https://github.com/dpradell-dev/openfort-ugs-integration/blob/19b4057edeefff2e08ca029bd9c57b7c94cc0510/OpenfortIntegration/OpenfortIntegration/PlayersModule.cs#L38) using Openfort and it [links it](https://github.com/dpradell-dev/openfort-ugs-integration/blob/f43d6259e7e1b37e69857294323f1802e460f07d/OpenfortIntegration/OpenfortIntegration/PlayersModule.cs#L43) to the Unity player. Then the player is able to frictionlessly [mint an NFT](https://github.com/dpradell-dev/openfort-ugs-integration/blob/19b4057edeefff2e08ca029bd9c57b7c94cc0510/OpenfortIntegration/OpenfortIntegration/MintingModule.cs#L26).
+The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/authentication/manual/get-started) to sign in as a new anonymous player. It then [creates an Openfort player](https://github.com/dpradell-dev/openfort-ugs-integration/blob/19b4057edeefff2e08ca029bd9c57b7c94cc0510/OpenfortIntegration/OpenfortIntegration/PlayersModule.cs#L31) and a [custodial account](https://github.com/dpradell-dev/openfort-ugs-integration/blob/19b4057edeefff2e08ca029bd9c57b7c94cc0510/OpenfortIntegration/OpenfortIntegration/PlayersModule.cs#L38) using Openfort and it [links it](https://github.com/dpradell-dev/openfort-ugs-integration/blob/f43d6259e7e1b37e69857294323f1802e460f07d/OpenfortIntegration/OpenfortIntegration/PlayersModule.cs#L43) to the Unity player. Then the player can frictionlessly [mint an NFT](https://github.com/dpradell-dev/openfort-ugs-integration/blob/19b4057edeefff2e08ca029bd9c57b7c94cc0510/OpenfortIntegration/OpenfortIntegration/MintingModule.cs#L26).
 
 ## Application Workflow
 
@@ -47,7 +47,7 @@ The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/a
 
 - ### Set Openfort dashboard variables
 
-  Open the project with your preferred IDE, open [``SingletonModule.cs``](https://github.com/dpradell-dev/openfort-ugs-integration/blob/main/OpenfortIntegration/OpenfortIntegration/SingletonModule.cs) and fill these variables:
+  Open the project with your preferred IDE, open [``SingletonModule.cs``](https://github.com/dpradell-dev/openfort-ugs-integration/blob/main/OpenfortIntegration/OpenfortIntegration/SingletonModule.cs) and fill in these variables:
 
   ![](https://strapi-oube.onrender.com/uploads/ugs_integration_1_6001ca1099.png?updated_at=2023-12-13T17:45:19.990Z)
 
@@ -55,7 +55,7 @@ The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/a
   - [Retrieve the **Contract API ID**](https://dashboard.openfort.xyz/assets)
   - [Retrieve the **Policy API ID**](https://dashboard.openfort.xyz/policies)
 
-- ### Package code
+- ### Package Code
   Follow [the official documentation steps](https://docs.unity.com/ugs/en-us/manual/cloud-code/manual/modules/getting-started#Package_code).
 - ### Deploy to UGS
   Follow [the official documentation steps](https://docs.unity.com/ugs/en-us/manual/cloud-code/manual/modules/getting-started#Deploy_a_module_project).
