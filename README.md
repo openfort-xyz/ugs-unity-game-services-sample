@@ -71,7 +71,7 @@ Play the **Main** scene and click ***Sign in*** button. After some authenticatio
 
 Select ***Mint***. After a brief period, you should see a representation of your newly minted NFT:
 
-![Alt text](https://strapi-oube.onrender.com/uploads/playfab_opensea_wc_img_c37ff864a8.png?updated_at=2023-11-19T11:06:46.185Z)
+![Alt text](https://strapi-oube.onrender.com/uploads/ugs_integration_3_181e80ff26.png?updated_at=2023-12-14T10:02:43.778Z)
 
 In the [Openfort Players dashboard](https://dashboard.openfort.xyz/players), a new player entry should be visible. On selecting this player:
 
