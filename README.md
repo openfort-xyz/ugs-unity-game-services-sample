@@ -27,7 +27,14 @@ The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/a
     
     This sample requires a contract to run. We use [0x38090d1636069c0ff1Af6bc1737Fb996B7f63AC0](https://mumbai.polygonscan.com/address/0x38090d1636069c0ff1Af6bc1737Fb996B7f63AC0) (NFT contract deployed in 80001 Mumbai). You can use this for the guide:
 
-    ![Contract Info](https://blog-cms.openfort.xyz/uploads/ugs_integration_4_9397f3633b.png?updated_at=2023-12-14T15:59:33.808Z)
+    <div align="center">
+    <img
+      width="50%"
+      height="50%"
+      src="https://blog-cms.openfort.xyz/uploads/ugs_integration_4_9397f3633b.png?updated_at=2023-12-14T15:59:33.808Z"
+      alt='Contract Info'
+    />
+    </div>
 
   + [Add a Policy](https://dashboard.openfort.xyz/policies/new)
     
