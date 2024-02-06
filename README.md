@@ -14,6 +14,17 @@ The sample includes:
 
 The sample uses [Unity Authentication](https://docs.unity.com/ugs/en-us/manual/authentication/manual/get-started) to sign in as a new anonymous player. It then [creates an Openfort player](https://github.com/openfort-xyz/ugs-unity-game-services-sample/blob/ab1a5f69346910c18ea88579f6fce81cdcde489a/ugs-backend/CloudCodeModules/PlayersModule.cs#L31) and a [custodial account](https://github.com/openfort-xyz/ugs-unity-game-services-sample/blob/ab1a5f69346910c18ea88579f6fce81cdcde489a/ugs-backend/CloudCodeModules/PlayersModule.cs#L38) using Openfort and it [links it](https://github.com/openfort-xyz/ugs-unity-game-services-sample/blob/ab1a5f69346910c18ea88579f6fce81cdcde489a/ugs-backend/CloudCodeModules/PlayersModule.cs#L43) to the Unity player. Then the player can frictionlessly [mint an NFT](https://github.com/openfort-xyz/ugs-unity-game-services-sample/blob/ab1a5f69346910c18ea88579f6fce81cdcde489a/ugs-backend/CloudCodeModules/MintingModule.cs#L26).
 
+## Application Workflow
+
+<div align="center">
+    <img
+      width="100%"
+      height="100%"
+      src="https://blog-cms.openfort.xyz/uploads/ugs_integration_workflow_c592a871cf.png?updated_at=2024-02-06T08:45:22.184Z"
+      alt='Openfort Unity Gaming Services Integration workflow'
+    />
+</div>
+
 ## Prerequisites
 + **Get started with Openfort**
   + [Sign in](https://dashboard.openfort.xyz/login) or [sign up](https://dashboard.openfort.xyz/register) and create a new dashboard project
